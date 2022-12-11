@@ -35,5 +35,6 @@ pipeline {
             sh 'docker rmi valere1991/hc-hystrix-dashboard -f'
          }
         }
+        
     }
 }
