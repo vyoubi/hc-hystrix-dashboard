@@ -1,3 +1,20 @@
+server:
+  port: 7000
+
 spring:
-  profiles:
-    active: prod
+  application:
+    name: HYSTRIX-DASHBOARD
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://af799cbd9e05549758b7c3059ec8616e-745050297.eu-west-2.elb.amazonaws.com/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.uuid}
